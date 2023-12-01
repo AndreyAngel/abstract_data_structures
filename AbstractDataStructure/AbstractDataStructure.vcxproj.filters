@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Models">
+      <UniqueIdentifier>{adb71a44-15f1-44b8-be7b-75623061b91b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Queue">
+      <UniqueIdentifier>{d5724b6a-8277-4231-9123-9a645e4ceeb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\RingBuffer">
+      <UniqueIdentifier>{26dfb4d7-f3d0-463a-9fb1-7a9c17a9d2b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Stack">
+      <UniqueIdentifier>{1efea4df-48aa-48ef-99e4-bd23785ca98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\View">
+      <UniqueIdentifier>{999f4115-1a5e-4d87-8dd5-48114cd5ef7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Headers\Queue">
+      <UniqueIdentifier>{fcfe4734-6cba-45f4-b513-ea23837624ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Headers\RingBuffer">
+      <UniqueIdentifier>{6b4dc3e1-a238-4905-bb67-740e761fb6ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Models\Headers\Stack">
+      <UniqueIdentifier>{0480750f-4601-440f-9741-1004da0087e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="StackBasedQueue.cpp">
+      <Filter>Исходные файлы\Models\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="StackBasedQueueInt.cpp">
+      <Filter>Исходные файлы\Models\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBufferQueue.cpp">
+      <Filter>Исходные файлы\Models\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBuffer.cpp">
+      <Filter>Исходные файлы\Models\RingBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Исходные файлы\Models\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="StackInt.cpp">
+      <Filter>Исходные файлы\Models\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBufferInt.cpp">
+      <Filter>Исходные файлы\Models\RingBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBufferQueueInt.cpp">
+      <Filter>Исходные файлы\Models\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="StackView.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBufferView.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBufferQueueView.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+    <ClCompile Include="StackBasedQueueView.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StackBasedQueue.h">
+      <Filter>Исходные файлы\Models\Headers\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="StackBasedQueueInt.h">
+      <Filter>Исходные файлы\Models\Headers\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBufferQueue.h">
+      <Filter>Исходные файлы\Models\Headers\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBuffer.h">
+      <Filter>Исходные файлы\Models\Headers\RingBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBufferInt.h">
+      <Filter>Исходные файлы\Models\Headers\RingBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Исходные файлы\Models\Headers\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="StackInt.h">
+      <Filter>Исходные файлы\Models\Headers\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBufferQueueInt.h">
+      <Filter>Исходные файлы\Models\Headers\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="StackView.h">
+      <Filter>Исходные файлы\View</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBufferView.h">
+      <Filter>Исходные файлы\View</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBufferQueueView.h">
+      <Filter>Исходные файлы\View</Filter>
+    </ClInclude>
+    <ClInclude Include="StackBasedQueueView.h">
+      <Filter>Исходные файлы\View</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
