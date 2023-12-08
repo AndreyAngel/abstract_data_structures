@@ -19,7 +19,7 @@ void RingBufferQueueView::Initialize()
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Добавить элемент в очередь"
             "\n2. Извлечь элемент из очереди"
-            "\n3. Удаление очереди (очистка памяти)"
+            "\n3. Очистить очередь"
             "\n4. Выход в главное меню" << endl;
 
         int choose;
@@ -45,7 +45,7 @@ void RingBufferQueueView::Initialize()
 
             case 3:
                 _queue->Clear();
-
+                break;
             case 4:
                 delete _queue;
                 flag = false;

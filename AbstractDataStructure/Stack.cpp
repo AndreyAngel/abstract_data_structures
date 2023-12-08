@@ -6,6 +6,7 @@ Stack<T>::Stack()
 {
     _capacity = 3;
     _array = new T[3];
+    _magnificationFactor = 2;
 }
 
 template<typename T>
@@ -13,6 +14,7 @@ Stack<T>::Stack(int capacity)
 {
     _capacity = capacity;
     _array = new T[capacity];
+    _magnificationFactor = 2;
 }
 
 template<typename T>
@@ -21,6 +23,7 @@ Stack<T>::Stack(int length, int capacity, T* array)
     _length = length;
     _capacity = capacity;
 	_array = array;
+    _magnificationFactor = 2;
 }
 
 template<typename T>
