@@ -82,7 +82,7 @@ void RingBuffer<T>::Clear()
 {
 	for (int i = 0; i < _count; i++)
 	{
-		_array[i] = NULL;
+		_array[i] = 0;
 	}
 
 	_head = 0;

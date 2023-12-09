@@ -57,7 +57,7 @@ T Stack<T>::Pop()
 
     T element = _array[_length - 1];
     //TODO: 
-    _array[_length - 1] = NULL;
+    _array[_length - 1] = 0;
     _length--;
 
     return element;
@@ -68,7 +68,7 @@ void Stack<T>::Clear()
 {
     for (int i = 0; i < _length; i++)
     {
-        _array[i] = NULL;
+        _array[i] = 0;
     }
 
     _length = 0;
