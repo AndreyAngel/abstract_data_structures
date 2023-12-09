@@ -12,25 +12,21 @@ void StackView::Initialize()
 {
     _stack = new Stack<int>(5);
 
-    bool flag = true;
-    int choose;
-
-    while (flag)
+    while (true)
     {
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Поместить элемент в стэк" << endl
              << "2. Взять элемент из стэка" << endl
              << "3. Очистить стэк" << endl
              << "4. Выход в главное меню" << endl;
-
-        cin >> choose;
-        if (!cin)
+        //TODO: duplication
+        int choose;
+        string result = InsertIntValue(choose);
+        if (result != "")
         {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Необходимо ввести целое число!" << endl;
+            cout << result;
+            continue;
         }
-        cout << endl;
 
         switch (choose)
         {
@@ -48,8 +44,7 @@ void StackView::Initialize()
 
             case 4:
                 delete _stack;
-                flag = false;
-                break;
+                return;
 
             default:
                 cout << endl;
@@ -61,21 +56,18 @@ void StackView::Initialize()
 void StackView::Push()
 {
     cout << "Введите какой элемент необходимо добавить: ";
-
+    //TODO: duplication
     int value;
-
-    cin >> value;
-    if (!cin)
+    string result = InsertIntValue(value);
+    if (result != "")
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Необходимо ввести целое число!" << endl;
+        cout << result;
+        return;
     }
-    else
-    {
-        _stack->Push(value);
-        Print();
-    }
+    
+    _stack->Push(value);
+    _size++;
+    Print();
 }
 
 void StackView::Pop()
@@ -87,13 +79,14 @@ void StackView::Pop()
     else
     {
         cout << _stack->Pop() << endl;
+        _size--;
         Print();
     }
 }
 
 void StackView::Print()
 {
-    Stack<int>* newStack = new Stack<int>(5);
+    Stack<int>* newStack = new Stack<int>(_size);
 
     cout << "Текущий стэк: ";
 

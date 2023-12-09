@@ -1,4 +1,7 @@
 #pragma once
 #include "StackBasedQueue.h"
 
-typedef StackBasedQueue<int> QueueInt;
+/// <summary>
+/// Целочисленная очередь на базе двух стеков
+/// </summary>
+typedef StackBasedQueue<int> StackBasedQueueInt;

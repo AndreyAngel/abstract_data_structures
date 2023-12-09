@@ -2,28 +2,18 @@
 #include <iostream>
 
 template<typename T>
-Stack<T>::Stack()
-{
-    _capacity = 3;
-    _array = new T[3];
-    _magnificationFactor = 2;
-}
+Stack<T>::Stack() : Stack(0, 3, new T[3]) {}
 
 template<typename T>
-Stack<T>::Stack(int capacity)
-{
-    _capacity = capacity;
-    _array = new T[capacity];
-    _magnificationFactor = 2;
-}
+Stack<T>::Stack(int capacity) : Stack(0, capacity, new T[capacity]) {}
 
 template<typename T>
-Stack<T>::Stack(int length, int capacity, T* array)
+Stack<T>::Stack(int length,  int capacity, T* array)
 {
+    //TODO: duplication
     _length = length;
     _capacity = capacity;
 	_array = array;
-    _magnificationFactor = 2;
 }
 
 template<typename T>
@@ -32,7 +22,6 @@ Stack<T>::~Stack()
     delete[] _array;
     _length = 0;
     _capacity = 0;
-    _magnificationFactor = 0;
 }
 
 template<typename T>
@@ -63,10 +52,11 @@ T Stack<T>::Pop()
 {
     if (_length == 0)
     {
-        throw new _exception();
+        throw new std::exception();
     }
 
     T element = _array[_length - 1];
+    //TODO: 
     _array[_length - 1] = NULL;
     _length--;
 
@@ -80,7 +70,7 @@ void Stack<T>::Clear()
     {
         _array[i] = NULL;
     }
-    //delete[] _array;
+
     _length = 0;
 }
 

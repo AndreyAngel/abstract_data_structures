@@ -78,6 +78,9 @@
     <ClCompile Include="StackBasedQueueView.cpp">
       <Filter>Исходные файлы\View</Filter>
     </ClCompile>
+    <ClCompile Include="BaseView.cpp">
+      <Filter>Исходные файлы\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StackBasedQueue.h">
@@ -114,6 +117,9 @@
       <Filter>Исходные файлы\View</Filter>
     </ClInclude>
     <ClInclude Include="StackBasedQueueView.h">
+      <Filter>Исходные файлы\View</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseView.h">
       <Filter>Исходные файлы\View</Filter>
     </ClInclude>
   </ItemGroup>

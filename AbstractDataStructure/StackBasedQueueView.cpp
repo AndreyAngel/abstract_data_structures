@@ -11,9 +11,8 @@ StackBasedQueueView::StackBasedQueueView()
 void StackBasedQueueView::Initialize()
 {
     _queue = new StackBasedQueue<int>(5);
-    bool flag = true;
 
-    while (flag == true)
+    while (true)
     {
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Добавить элемент в очередь"
@@ -22,15 +21,12 @@ void StackBasedQueueView::Initialize()
             "\n4. Выход в главное меню" << endl;
 
         int choose;
-        cin >> choose;
-
-        if (!cin)
+        string result = InsertIntValue(choose);
+        if (result != "")
         {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Необходимо ввести целое число!" << endl;
+            cout << result;
+            continue;
         }
-        cout << endl;
 
         switch (choose)
         {
@@ -45,8 +41,8 @@ void StackBasedQueueView::Initialize()
                 break;
             case 4:
                 delete _queue;
-                flag = false;
-                break;
+                return;
+
             default:
                 cout << endl;
                 break;
@@ -57,19 +53,17 @@ void StackBasedQueueView::Initialize()
 void StackBasedQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
-
+    //TODO: duplication
     int value;
-    cin >> value;
-
-    if (!cin)
+    string result = InsertIntValue(value);
+    if (result != "")
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Необходимо ввести целое число!" << endl;
+        cout << result;
         return;
     }
     
     _queue->Enqueue(value);
+    _size++;
     Print();
 }
 
@@ -82,12 +76,13 @@ void StackBasedQueueView::Dequeue()
     }
 
     cout << _queue->Dequeue() << endl;
+    _size--;
     Print();
 }
 
 void StackBasedQueueView::Print()
 {
-    StackBasedQueue<int>* newQueue = new StackBasedQueue<int>(5);
+    StackBasedQueue<int>* newQueue = new StackBasedQueue<int>(_size);
 
     cout << "Текущая очередь: ";
 

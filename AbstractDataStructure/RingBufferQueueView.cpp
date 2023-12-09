@@ -12,26 +12,22 @@ void RingBufferQueueView::Initialize()
 {
     _queue = new RingBufferQueue<int>(5);
 
-    bool flag = true;
-
-    while (flag)
+    while (true)
     {
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Добавить элемент в очередь"
-            "\n2. Извлечь элемент из очереди"
-            "\n3. Очистить очередь"
-            "\n4. Выход в главное меню" << endl;
+                "\n2. Извлечь элемент из очереди"
+                "\n3. Очистить очередь"
+                "\n4. Выход в главное меню" << endl;
 
+        //TODO: duplication
         int choose;
-        cin >> choose;
-
-        if (!cin)
+        string result = InsertIntValue(choose);
+        if (result != "")
         {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Необходимо ввести целое число!" << endl;
+            cout << result;
+            continue;
         }
-        cout << endl;
 
         switch (choose)
         {
@@ -48,8 +44,7 @@ void RingBufferQueueView::Initialize()
                 break;
             case 4:
                 delete _queue;
-                flag = false;
-                break;
+                return;
 
             default:
                 cout << endl;
@@ -62,14 +57,12 @@ void RingBufferQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
 
+    //TODO: duplication
     int value;
-    cin >> value;
-
-    if (!cin)
+    string result = InsertIntValue(value);
+    if (result != "")
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Необходимо ввести целое число!" << endl;
+        cout << result;
         return;
     }
 
@@ -93,7 +86,7 @@ void RingBufferQueueView::Dequeue()
 
 void RingBufferQueueView::Print()
 {
-    RingBufferQueue<int>* newQueue = new RingBufferQueue<int>(_size + 1);
+    RingBufferQueue<int>* newQueue = new RingBufferQueue<int>(_size);
 
     cout << "Текущая очередь: ";
 
@@ -105,9 +98,6 @@ void RingBufferQueueView::Print()
     }
 
     cout << endl;
-
-    //delete _queue;
-    //_queue = newQueue;
 
     while (!newQueue->IsEmpty())
     {

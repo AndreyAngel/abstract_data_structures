@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseView.cpp" />
     <ClCompile Include="RingBuffer.cpp" />
     <ClCompile Include="RingBufferInt.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="StackView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseView.h" />
     <ClInclude Include="RingBuffer.h" />
     <ClInclude Include="RingBufferInt.h" />
     <ClInclude Include="StackBasedQueue.h" />

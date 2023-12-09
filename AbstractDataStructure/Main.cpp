@@ -17,7 +17,7 @@ int main()
              << "2. Создание кольцевого буфера" << endl
              << "3. Создание очереди на базе 2 стеков" << endl
              << "4. Создание очереди на базе кольцевого буфера" << endl;
-
+        //TODO: duplication
         int dataStructureChoose;
         cin >> dataStructureChoose;
         if (!cin)
@@ -28,7 +28,7 @@ int main()
         }
         cout << endl;
 
-        bool flag = true;
+        //TODO: flag
         switch (dataStructureChoose)
         {
             case 1:

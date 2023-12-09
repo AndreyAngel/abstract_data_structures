@@ -10,16 +10,14 @@ RingBufferView::RingBufferView()
 
 void RingBufferView::Initialize()
 {
-    bool flag = true;
+    //TODO: duplication
     int choose;
 
     cout << "Введите размерность кольцевого буфера: ";
-    cin >> _size;
-    if (!cin)
+    string result = InsertIntValue(_size);
+    if (result != "")
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Необходимо ввести целое положительное число!" << endl;
+        cout << result;
         return;
     }
 
@@ -31,7 +29,7 @@ void RingBufferView::Initialize()
 
     _ringBuffer = new RingBuffer<int>(_size);
 
-    while (flag)
+    while (true)
     {
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Поместить в эелемент в буфер" << endl
@@ -39,37 +37,36 @@ void RingBufferView::Initialize()
              << "3. Очистить буфер" << endl
              << "4. Выход в главное меню" << endl;
 
-        cin >> choose;
-        if (!cin)
+        //TODO: duplication
+        string result = InsertIntValue(choose);
+        if (result != "")
         {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Необходимо ввести целое число!" << endl;
+            cout << result;
+            continue;
         }
-        cout << endl;
 
         switch (choose)
         {
-        case 1:
-            Enqueue();
-            break;
+            //TODO: RSDN
+            case 1:
+                Enqueue();
+                break;
 
-        case 2:
-            Dequeue();
-            break;
+            case 2:
+                Dequeue();
+                break;
 
-        case 3:
-            _ringBuffer->Clear();
-            break;
+            case 3:
+                _ringBuffer->Clear();
+                break;
 
-        case 4:
-            delete _ringBuffer;
-            flag = false;
-            break;
+            case 4:
+                delete _ringBuffer;
+                return;
 
-        default:
-            cout << endl;
-            break;
+            default:
+                cout << endl;
+                break;
         }
     }
 }
@@ -79,13 +76,10 @@ void RingBufferView::Enqueue()
     cout << "Введите элемент, который необходимо добавить: ";
 
     int value;
-    cin >> value;
-
-    if (!cin)
+    string result = InsertIntValue(value);
+    if (result != "")
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << "Необходимо ввести целое число!" << endl;
+        cout << result;
         return;
     }
     
@@ -121,5 +115,4 @@ void RingBufferView::Print()
     cout << endl;
 
     _ringBuffer = newBuffer;
-    //delete newBuffer;
 }
