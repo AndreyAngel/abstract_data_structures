@@ -56,7 +56,7 @@ int main()
             break;
 
             default:
-                cout << endl;
+                cout << "Необходимо ввести значение от 1 до 4" << endl << endl;
                 break;
         }
     }

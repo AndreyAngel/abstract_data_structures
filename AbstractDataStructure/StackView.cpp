@@ -20,13 +20,7 @@ void StackView::Initialize()
              << "3. Очистить стэк" << endl
              << "4. Выход в главное меню" << endl;
         //TODO: duplication
-        int choose;
-        string result = InsertIntValue(choose);
-        if (result != "")
-        {
-            cout << result;
-            continue;
-        }
+        int choose = InsertIntValue();
 
         switch (choose)
         {
@@ -47,7 +41,7 @@ void StackView::Initialize()
                 return;
 
             default:
-                cout << endl;
+                cout << "Необходимо ввести значение от 1 до 4" << endl << endl;
                 break;
         }
     }
@@ -57,13 +51,7 @@ void StackView::Push()
 {
     cout << "Введите какой элемент необходимо добавить: ";
     //TODO: duplication
-    int value;
-    string result = InsertIntValue(value);
-    if (result != "")
-    {
-        cout << result;
-        return;
-    }
+    int value = InsertIntValue();
     
     _stack->Push(value);
     _size++;

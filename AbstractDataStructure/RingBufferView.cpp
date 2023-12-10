@@ -11,15 +11,9 @@ RingBufferView::RingBufferView()
 void RingBufferView::Initialize()
 {
     //TODO: duplication
-    int choose;
 
     cout << "Введите размерность кольцевого буфера: ";
-    string result = InsertIntValue(_size);
-    if (result != "")
-    {
-        cout << result;
-        return;
-    }
+    _size = InsertIntValue();
 
     if (_size < 0)
     {
@@ -38,12 +32,7 @@ void RingBufferView::Initialize()
              << "4. Выход в главное меню" << endl;
 
         //TODO: duplication
-        string result = InsertIntValue(choose);
-        if (result != "")
-        {
-            cout << result;
-            continue;
-        }
+        int choose = InsertIntValue();
 
         switch (choose)
         {
@@ -65,7 +54,7 @@ void RingBufferView::Initialize()
                 return;
 
             default:
-                cout << endl;
+                cout << "Необходимо ввести значение от 1 до 4" << endl << endl;
                 break;
         }
     }
@@ -75,14 +64,7 @@ void RingBufferView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
 
-    int value;
-    string result = InsertIntValue(value);
-    if (result != "")
-    {
-        cout << result;
-        return;
-    }
-    
+    int value = InsertIntValue();
     _ringBuffer->Enqueue(value);
     Print();
 }

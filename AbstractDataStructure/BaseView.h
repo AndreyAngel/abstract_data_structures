@@ -18,6 +18,6 @@ protected:
 	/// <summary>
 	/// Ввести целое число
 	/// </summary>
-	/// <returns> Пустая строка или ошибка </returns>
-	string InsertIntValue(int& value);
+	/// <returns> Целое число </returns>
+	int InsertIntValue();
 };

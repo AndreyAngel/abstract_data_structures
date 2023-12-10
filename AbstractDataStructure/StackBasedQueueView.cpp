@@ -20,13 +20,7 @@ void StackBasedQueueView::Initialize()
             "\n3. Очистить очередь"
             "\n4. Выход в главное меню" << endl;
 
-        int choose;
-        string result = InsertIntValue(choose);
-        if (result != "")
-        {
-            cout << result;
-            continue;
-        }
+        int choose = InsertIntValue();
 
         switch (choose)
         {
@@ -44,7 +38,7 @@ void StackBasedQueueView::Initialize()
                 return;
 
             default:
-                cout << endl;
+                cout << "Необходимо ввести значение от 1 до 4" << endl << endl;
                 break;
         }
     }
@@ -54,13 +48,7 @@ void StackBasedQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
     //TODO: duplication
-    int value;
-    string result = InsertIntValue(value);
-    if (result != "")
-    {
-        cout << result;
-        return;
-    }
+    int value = InsertIntValue();
     
     _queue->Enqueue(value);
     _size++;

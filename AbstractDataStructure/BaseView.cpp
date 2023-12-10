@@ -8,17 +8,22 @@ BaseView::BaseView()
     setlocale(LC_ALL, "Russian");
 }
 
-string BaseView::InsertIntValue(int& value)
+int BaseView::InsertIntValue()
 {
-    cin >> value;
+    int value;
 
-    if (!cin)
+    while (true)
     {
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        return "Необходимо ввести целое число!";
-    }
-    cout << endl;
+        cin >> value;
 
-    return "";
+        if (!cin)
+        {
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Необходимо ввести целое число!" << endl;
+        }
+
+        cout << endl;
+        return value;
+    }
 }
