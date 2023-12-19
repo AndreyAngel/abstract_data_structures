@@ -1,5 +1,6 @@
 #include "RingBufferView.h"
 #include "iostream"
+#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
@@ -10,8 +11,6 @@ RingBufferView::RingBufferView()
 
 void RingBufferView::Initialize()
 {
-    //TODO: duplication
-
     cout << "Введите размерность кольцевого буфера: ";
     _size = InsertIntValue();
 
@@ -28,15 +27,14 @@ void RingBufferView::Initialize()
         cout << "Выберите что необходимо сделать:" << endl;
         cout << "1. Поместить в эелемент в буфер" << endl
              << "2. Взять элемент из буфера" << endl
-             << "3. Очистить буфер" << endl
-             << "4. Выход в главное меню" << endl;
+             << "3. Увеличить размер буфера в 2 раза" << endl
+             << "4. Очистить буфер" << endl
+             << "5. Выход в главное меню" << endl;
 
-        //TODO: duplication
         int choose = InsertIntValue();
 
         switch (choose)
         {
-            //TODO: RSDN
             case 1:
                 Enqueue();
                 break;
@@ -46,10 +44,17 @@ void RingBufferView::Initialize()
                 break;
 
             case 3:
-                _ringBuffer->Clear();
+                _ringBuffer->IncreaseCapacity();
+                _size *= 2;
+                Print();
                 break;
 
             case 4:
+                _ringBuffer->Clear();
+                Print();
+                break;
+
+            case 5:
                 delete _ringBuffer;
                 return;
 
@@ -87,11 +92,18 @@ void RingBufferView::Print()
 
     cout << "Текущий буфер: ";
 
-    while (!_ringBuffer->IsEmpty())
+    for (int i = 0; i < _size; i++)
     {
-        int element = _ringBuffer->Dequeue();
-        cout << element << ' ';
-        newBuffer->Enqueue(element);
+        if (!_ringBuffer->IsEmpty())
+        {
+            int element = _ringBuffer->Dequeue();
+            cout << element << ' ';
+            newBuffer->Enqueue(element);
+        }
+        else
+        {
+            cout << '.' << ' ';
+        }
     }
 
     cout << endl;

@@ -1,12 +1,11 @@
 #pragma once
 
 #include "RingBuffer.h"
-#include "BaseView.h"
 
 /// <summary>
 /// Модель представления кольцевого буфера
 /// </summary>
-class RingBufferView : BaseView
+class RingBufferView
 {
 	/// <summary>
 	/// Указатель на буфер

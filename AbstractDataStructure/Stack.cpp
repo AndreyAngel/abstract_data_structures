@@ -1,5 +1,5 @@
 #include "Stack.h"
-#include <iostream>
+#include <stdexcept>
 
 template<typename T>
 Stack<T>::Stack() : Stack(0, 3, new T[3]) {}
@@ -10,7 +10,6 @@ Stack<T>::Stack(int capacity) : Stack(0, capacity, new T[capacity]) {}
 template<typename T>
 Stack<T>::Stack(int length,  int capacity, T* array)
 {
-    //TODO: duplication
     _length = length;
     _capacity = capacity;
 	_array = array;
@@ -52,11 +51,10 @@ T Stack<T>::Pop()
 {
     if (_length == 0)
     {
-        throw new std::exception();
+        throw std::exception();
     }
 
     T element = _array[_length - 1];
-    //TODO: 
     _array[_length - 1] = 0;
     _length--;
 

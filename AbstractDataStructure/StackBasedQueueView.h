@@ -1,11 +1,10 @@
 #pragma once
 #include "StackBasedQueue.h"
-#include "BaseView.h"
 
 /// <summary>
 /// Модель представления очереди на базе двух стеков
 /// </summary>
-class StackBasedQueueView : BaseView
+class StackBasedQueueView
 {
 	/// <summary>
 	/// Указатель на очередь

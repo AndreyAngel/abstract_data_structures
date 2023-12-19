@@ -15,6 +15,11 @@ RingBufferQueue<T>::~RingBufferQueue()
 template<typename T>
 inline void RingBufferQueue<T>::Enqueue(T value)
 {
+	if (_ringBuffer->IsFull())
+	{
+		_ringBuffer->IncreaseCapacity();
+	}
+
 	_ringBuffer->Enqueue(value);
 }
 

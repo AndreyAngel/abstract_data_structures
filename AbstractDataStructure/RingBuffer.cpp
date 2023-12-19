@@ -1,5 +1,5 @@
 #include "RingBuffer.h"
-#include <iostream>
+#include <stdexcept>
 
 template<typename T>
 RingBuffer<T>::RingBuffer(int bufferSize)
@@ -70,7 +70,6 @@ T RingBuffer<T>::Dequeue()
 	}
 
 	T result = _array[_head];
-	//TODO: nullptr
 	_head = NextPosition(_head);
 	_count--;
 
@@ -88,4 +87,21 @@ void RingBuffer<T>::Clear()
 	_head = 0;
 	_tail = 0;
 	_count = 0;
+}
+
+template<typename T>
+void RingBuffer<T>::IncreaseCapacity()
+{
+	_bufferSize *= _magnificationFactor;
+	T* newArray = new T[_bufferSize];
+
+	for (int i = 0; i < _count; i++)
+	{
+		newArray[i] = _array[i];
+	}
+
+	delete[] _array;
+	_array = newArray;
+	newArray = nullptr;
+	_tail = _count;
 }

@@ -56,7 +56,7 @@ public:
 	/// <summary>
 	/// Добавить елемент в стек
 	/// </summary>
-	/// <param name="value"> элемент </param>
+	/// <param name="value"> Элемент </param>
 	void Push(T value);
 
 	/// <summary>

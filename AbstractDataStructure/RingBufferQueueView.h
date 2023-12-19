@@ -1,12 +1,11 @@
 #pragma once
 
 #include "RingBufferQueue.h"
-#include "BaseView.h"
 
 /// <summary>
 /// Модель представления очереди на основе кольцевого буфера
 /// </summary>
-class RingBufferQueueView : BaseView
+class RingBufferQueueView
 {
 	/// <summary>
 	/// Указатель на очередь

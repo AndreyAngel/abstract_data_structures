@@ -1,12 +1,11 @@
 #pragma once
 
 #include "Stack.h"
-#include "BaseView.h"
 
 /// <summary>
 /// Модель представления стека
 /// </summary>
-class StackView : BaseView
+class StackView
 {
 	/// <summary>
 	/// Стек

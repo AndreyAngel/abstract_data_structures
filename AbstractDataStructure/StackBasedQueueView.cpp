@@ -1,5 +1,6 @@
 #include "StackBasedQueueView.h"
 #include "iostream"
+#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
@@ -47,7 +48,6 @@ void StackBasedQueueView::Initialize()
 void StackBasedQueueView::Enqueue()
 {
     cout << "¬ведите элемент, который необходимо добавить: ";
-    //TODO: duplication
     int value = InsertIntValue();
     
     _queue->Enqueue(value);

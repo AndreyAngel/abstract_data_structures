@@ -1,14 +1,12 @@
-#include "BaseView.h"
-#include "iostream"
+#include <iostream>
 
 using namespace std;
 
-BaseView::BaseView()
-{
-    setlocale(LC_ALL, "Russian");
-}
-
-int BaseView::InsertIntValue()
+/// <summary>
+/// Задать целочисленное значение
+/// </summary>
+/// <returns> Число </returns>
+static int InsertIntValue()
 {
     int value;
 
@@ -21,6 +19,7 @@ int BaseView::InsertIntValue()
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Необходимо ввести целое число!" << endl;
+            continue;
         }
 
         cout << endl;

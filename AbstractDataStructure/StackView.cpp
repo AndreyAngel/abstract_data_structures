@@ -1,5 +1,6 @@
 #include "StackView.h"
 #include "iostream"
+#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ void StackView::Initialize()
              << "2. Взять элемент из стэка" << endl
              << "3. Очистить стэк" << endl
              << "4. Выход в главное меню" << endl;
-        //TODO: duplication
+
         int choose = InsertIntValue();
 
         switch (choose)
@@ -50,7 +51,6 @@ void StackView::Initialize()
 void StackView::Push()
 {
     cout << "Введите какой элемент необходимо добавить: ";
-    //TODO: duplication
     int value = InsertIntValue();
     
     _stack->Push(value);

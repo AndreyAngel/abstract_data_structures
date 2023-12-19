@@ -1,5 +1,6 @@
 #include "RingBufferQueueView.h"
 #include "iostream"
+#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
@@ -20,7 +21,6 @@ void RingBufferQueueView::Initialize()
                 "\n3. Очистить очередь"
                 "\n4. Выход в главное меню" << endl;
 
-        //TODO: duplication
         int choose = InsertIntValue();
 
         switch (choose)
@@ -51,7 +51,6 @@ void RingBufferQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
 
-    //TODO: duplication
     int value = InsertIntValue();
 
     _queue->Enqueue(value);

@@ -1,9 +1,9 @@
 ﻿#include <iostream>
-
 #include "StackView.h"
 #include "RingBufferView.h"
 #include "StackBasedQueueView.h"
 #include "RingBufferQueueView.h"
+#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
@@ -17,18 +17,10 @@ int main()
              << "2. Создание кольцевого буфера" << endl
              << "3. Создание очереди на базе 2 стеков" << endl
              << "4. Создание очереди на базе кольцевого буфера" << endl;
-        //TODO: duplication
-        int dataStructureChoose;
-        cin >> dataStructureChoose;
-        if (!cin)
-        {
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "Необходимо ввести целое число!" << endl;
-        }
-        cout << endl;
 
-        //TODO: flag
+        //TODO: duplication
+        int dataStructureChoose = InsertIntValue();
+
         switch (dataStructureChoose)
         {
             case 1:

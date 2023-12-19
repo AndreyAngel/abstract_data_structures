@@ -32,6 +32,11 @@ class RingBuffer
 	/// </summary>
 	int _count;
 
+	/// <summary>
+	/// Коэффициент увеличения
+	/// </summary>
+	int const _magnificationFactor = 2;
+
 public:
 	/// <summary>
 	/// Создать экземпляр класса
@@ -62,9 +67,20 @@ public:
 	bool IsEmpty();
 
 	/// <summary>
+	/// Возвращает признак полностью заполненного буфера 
+	/// </summary>
+	/// <returns> true, если буфер полный, иначе false </returns>
+	bool IsFull();
+
+	/// <summary>
 	/// Очистить буфер
 	/// </summary>
 	void Clear();
+
+	/// <summary>
+	/// Увеличить вместимость
+	/// </summary>
+	void IncreaseCapacity();
 
 private:
 	/// <summary>
@@ -72,10 +88,4 @@ private:
 	/// </summary>
 	/// <param name="position"> Следующая позиция элемента </param>
 	int NextPosition(int position);
-
-	/// <summary>
-	/// Возвращает признак полностью заполненного буфера 
-	/// </summary>
-	/// <returns> true, если буфер полный, иначе false </returns>
-	bool IsFull();
 };

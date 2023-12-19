@@ -37,6 +37,9 @@
     <Filter Include="Исходные файлы\Models\Headers\Stack">
       <UniqueIdentifier>{0480750f-4601-440f-9741-1004da0087e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Helpers">
+      <UniqueIdentifier>{065008c8-efb0-4d40-a510-5777bce346b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -78,8 +81,8 @@
     <ClCompile Include="StackBasedQueueView.cpp">
       <Filter>Исходные файлы\View</Filter>
     </ClCompile>
-    <ClCompile Include="BaseView.cpp">
-      <Filter>Исходные файлы\View</Filter>
+    <ClCompile Include="IOConsoleHelper.cpp">
+      <Filter>Исходные файлы\Helpers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +120,6 @@
       <Filter>Исходные файлы\View</Filter>
     </ClInclude>
     <ClInclude Include="StackBasedQueueView.h">
-      <Filter>Исходные файлы\View</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseView.h">
       <Filter>Исходные файлы\View</Filter>
     </ClInclude>
   </ItemGroup>
