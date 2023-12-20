@@ -1,11 +1,11 @@
 #include "StackBasedQueueView.h"
 #include "iostream"
-#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
-StackBasedQueueView::StackBasedQueueView()
+StackBasedQueueView::StackBasedQueueView(IOConsoleHelper* ioHelper)
 {
+    _ioHelper = ioHelper;
 	Initialize();
 }
 
@@ -21,7 +21,7 @@ void StackBasedQueueView::Initialize()
             "\n3. Очистить очередь"
             "\n4. Выход в главное меню" << endl;
 
-        int choose = InsertIntValue();
+        int choose = _ioHelper->InsertIntValue();
 
         switch (choose)
         {
@@ -48,7 +48,7 @@ void StackBasedQueueView::Initialize()
 void StackBasedQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
-    int value = InsertIntValue();
+    int value = _ioHelper->InsertIntValue();
     
     _queue->Enqueue(value);
     _size++;

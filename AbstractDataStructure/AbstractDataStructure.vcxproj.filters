@@ -122,5 +122,8 @@
     <ClInclude Include="StackBasedQueueView.h">
       <Filter>Исходные файлы\View</Filter>
     </ClInclude>
+    <ClInclude Include="IOConsoleHelper.h">
+      <Filter>Исходные файлы\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

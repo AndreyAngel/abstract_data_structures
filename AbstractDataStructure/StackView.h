@@ -1,5 +1,5 @@
 #pragma once
-
+#include "IOConsoleHelper.h"
 #include "Stack.h"
 
 /// <summary>
@@ -17,12 +17,18 @@ class StackView
 	/// </summary>
 	int _size;
 
+	/// <summary>
+	///  ласс дл€ работы с консолью
+	/// </summary>
+	IOConsoleHelper* _ioHelper;
+
 public:
 
 	/// <summary>
 	/// —оздать экземпл€р модели представлени€
 	/// </summary>
-	StackView();
+	/// <param name="ioHelper">  ласс дл€ работы с консолью </param>
+	StackView(IOConsoleHelper* ioHelper);
 
 private:
 

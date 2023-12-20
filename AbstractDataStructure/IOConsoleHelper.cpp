@@ -1,12 +1,9 @@
 #include <iostream>
+#include "IOConsoleHelper.h"
 
 using namespace std;
 
-/// <summary>
-/// Задать целочисленное значение
-/// </summary>
-/// <returns> Число </returns>
-static int InsertIntValue()
+int IOConsoleHelper::InsertIntValue()
 {
     int value;
 
@@ -25,4 +22,17 @@ static int InsertIntValue()
         cout << endl;
         return value;
     }
+}
+
+string IOConsoleHelper::GetLine()
+{
+    string inputString;
+    getline(cin, inputString);
+
+    if (inputString.empty())
+    {
+        getline(cin, inputString);
+    }
+
+    return inputString;
 }

@@ -1,18 +1,18 @@
 #include "RingBufferView.h"
 #include "iostream"
-#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
-RingBufferView::RingBufferView()
+RingBufferView::RingBufferView(IOConsoleHelper* ioHelper)
 {
+    _ioHelper = ioHelper;
     Initialize();
 }
 
 void RingBufferView::Initialize()
 {
     cout << "Введите размерность кольцевого буфера: ";
-    _size = InsertIntValue();
+    _size = _ioHelper->InsertIntValue();
 
     if (_size < 0)
     {
@@ -31,7 +31,7 @@ void RingBufferView::Initialize()
              << "4. Очистить буфер" << endl
              << "5. Выход в главное меню" << endl;
 
-        int choose = InsertIntValue();
+        int choose = _ioHelper->InsertIntValue();
 
         switch (choose)
         {
@@ -69,7 +69,7 @@ void RingBufferView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
 
-    int value = InsertIntValue();
+    int value = _ioHelper->InsertIntValue();
     _ringBuffer->Enqueue(value);
     Print();
 }

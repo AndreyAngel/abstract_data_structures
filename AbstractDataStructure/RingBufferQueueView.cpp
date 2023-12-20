@@ -1,11 +1,11 @@
 #include "RingBufferQueueView.h"
 #include "iostream"
-#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
-RingBufferQueueView::RingBufferQueueView()
+RingBufferQueueView::RingBufferQueueView(IOConsoleHelper* ioHelper)
 {
+    _ioHelper = ioHelper;
 	Initialize();
 }
 
@@ -21,7 +21,7 @@ void RingBufferQueueView::Initialize()
                 "\n3. Очистить очередь"
                 "\n4. Выход в главное меню" << endl;
 
-        int choose = InsertIntValue();
+        int choose = _ioHelper->InsertIntValue();
 
         switch (choose)
         {
@@ -51,7 +51,7 @@ void RingBufferQueueView::Enqueue()
 {
     cout << "Введите элемент, который необходимо добавить: ";
 
-    int value = InsertIntValue();
+    int value = _ioHelper->InsertIntValue();
 
     _queue->Enqueue(value);
     _size++;

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "IOConsoleHelper.h"
 #include "RingBuffer.h"
 
 /// <summary>
@@ -17,12 +17,18 @@ class RingBufferView
 	/// </summary>
 	int _size;
 
+	/// <summary>
+	///  ласс дл€ работы с консолью
+	/// </summary>
+	IOConsoleHelper* _ioHelper;
+
 public:
 
 	/// <summary>
 	/// —оздать экземпл€р модкли представлени€
 	/// </summary>
-	RingBufferView();
+	/// <param name="ioHelper">  ласс дл€ работы с консолью </param>
+	RingBufferView(IOConsoleHelper* ioHelper);
 
 private:
 

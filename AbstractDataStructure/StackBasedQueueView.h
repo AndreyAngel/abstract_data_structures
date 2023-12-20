@@ -1,5 +1,6 @@
 #pragma once
 #include "StackBasedQueue.h"
+#include "IOConsoleHelper.h"
 
 /// <summary>
 /// Модель представления очереди на базе двух стеков
@@ -16,12 +17,18 @@ class StackBasedQueueView
 	/// </summary>
 	int _size;
 
+	/// <summary>
+	/// Класс для работы с консолью
+	/// </summary>
+	IOConsoleHelper* _ioHelper;
+
 public:
 
 	/// <summary>
 	/// Создать экземпляр модели представления
 	/// </summary>
-	StackBasedQueueView();
+	/// <param name="ioHelper"> Класс для работы с консолью </param>
+	StackBasedQueueView(IOConsoleHelper* ioHelper);
 
 private:
 

@@ -3,12 +3,13 @@
 #include "RingBufferView.h"
 #include "StackBasedQueueView.h"
 #include "RingBufferQueueView.h"
-#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
 int main()
 {
+    IOConsoleHelper* ioHelper = new IOConsoleHelper();
+
     setlocale(LC_ALL, "Russian");
     while (true)
     {
@@ -19,31 +20,31 @@ int main()
              << "4. Создание очереди на базе кольцевого буфера" << endl;
 
         //TODO: duplication
-        int dataStructureChoose = InsertIntValue();
+        int dataStructureChoose = ioHelper->InsertIntValue();
 
         switch (dataStructureChoose)
         {
             case 1:
             {
-                StackView* stackView = new StackView();
+                StackView* stackView = new StackView(ioHelper);
             }
             break;
 
             case 2: 
             {
-                RingBufferView* ringView = new RingBufferView();
+                RingBufferView* ringView = new RingBufferView(ioHelper);
             }
             break;
 
             case 3:
             {
-                StackBasedQueueView* queue = new StackBasedQueueView();
+                StackBasedQueueView* queue = new StackBasedQueueView(ioHelper);
             }
             break;
 
             case 4:
             {
-                RingBufferQueueView* ringBufferQueueView = new RingBufferQueueView();
+                RingBufferQueueView* ringBufferQueueView = new RingBufferQueueView(ioHelper);
             }
             break;
 

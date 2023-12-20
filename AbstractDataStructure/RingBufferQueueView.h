@@ -1,6 +1,6 @@
 #pragma once
-
 #include "RingBufferQueue.h"
+#include "IOConsoleHelper.h"
 
 /// <summary>
 /// Модель представления очереди на основе кольцевого буфера
@@ -17,12 +17,18 @@ class RingBufferQueueView
 	/// </summary>
 	int _size;
 
+	/// <summary>
+	/// Класс для работы с консолью
+	/// </summary>
+	IOConsoleHelper* _ioHelper;
+
 public:
 
 	/// <summary>
 	/// Создать экземпляр модели представления
 	/// </summary>
-	RingBufferQueueView();
+	/// <param name="ioHelper"> Класс для работы с консолью </param>
+	RingBufferQueueView(IOConsoleHelper* ioHelper);
 
 private:
 

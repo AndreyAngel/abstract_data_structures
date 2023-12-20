@@ -1,11 +1,11 @@
 #include "StackView.h"
 #include "iostream"
-#include "IOConsoleHelper.cpp"
 
 using namespace std;
 
-StackView::StackView()
+StackView::StackView(IOConsoleHelper* ioHelper)
 {
+    _ioHelper = ioHelper;
     Initialize();
 }
 
@@ -21,7 +21,7 @@ void StackView::Initialize()
              << "3. Очистить стэк" << endl
              << "4. Выход в главное меню" << endl;
 
-        int choose = InsertIntValue();
+        int choose = _ioHelper->InsertIntValue();
 
         switch (choose)
         {
@@ -51,7 +51,8 @@ void StackView::Initialize()
 void StackView::Push()
 {
     cout << "Введите какой элемент необходимо добавить: ";
-    int value = InsertIntValue();
+
+    int value = _ioHelper->InsertIntValue();
     
     _stack->Push(value);
     _size++;
